@@ -1,7 +1,8 @@
 ---
 layout: post
 title: post 1
-author: me
+author: Laurens Deprez
+date: 2024/05/04
 tags: misc
 ---
 

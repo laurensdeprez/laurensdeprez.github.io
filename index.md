@@ -6,4 +6,4 @@ layout: default
 
 _short intro_ 
 
-[Link to another page](./post_1.md).
+[Link to project 1](./post_1.md).
