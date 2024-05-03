@@ -1,5 +1,8 @@
 ---
 layout: post
+title: post 1
+author: me
+tags: misc
 ---
 
 # Title of the first post
