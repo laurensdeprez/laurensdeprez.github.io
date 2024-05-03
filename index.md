@@ -1,1 +1,9 @@
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+---
+layout: default
+---
+
+# Project 1 
+
+_short intro_ 
+
+[Link to another page](./post_1.md).
