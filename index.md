@@ -6,4 +6,10 @@ layout: default
 
 _short intro_ 
 
-[Link to project 1](./post_1.md).
+[Link](./post_1.md).
+
+# Kajak on the Dordogne
+
+_4 day kajak trip on the Dordogne river_ 
+
+[Link](./post_2.md).
