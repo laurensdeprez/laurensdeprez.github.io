@@ -7,6 +7,9 @@
 body {
     font-family: 'Roboto', sans-serif;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -35,19 +38,10 @@ nav ul li a {
     text-decoration: none;
 }
 
-#hero {
-    background: #f4f4f4;
+#about, #projects, #contact {
     padding: 2rem;
     text-align: center;
-}
-
-#hero h2 {
-    font-size: 2.5rem;
-}
-
-#about, #projects, #contact {
-    padding: 5rem;
-    text-align: center;
+    flex-grow: 1; /* Ensures the main content stretches */
 }
 
 .project-list {
@@ -74,14 +68,18 @@ nav ul li a {
     text-decoration: none;
 }
 
+#contact {
+    margin-bottom: 2rem; /* Adds space above the footer */
+}
+
 footer {
-    text-align: center;
-    padding: 1rem;
     background-color: #333;
     color: white;
-    position: fixed;
-    bottom: 0;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
     width: 100%;
+    margin-top: auto; /* Ensures footer stays at the bottom of the page */
 }
 
 .btn {
