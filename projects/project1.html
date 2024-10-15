@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculating portfolio returns - Project Details</title>
+    <title>Calculating portfolio returns</title>
     <link rel="stylesheet" href="../style.css">
+	
+	<!-- Load MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <header>
-        <h1> R </h1>
+        <h1> Calculating portfolio returns </h1>
     </header>
 
     <article class="project-detail">
 		<h2>Introduction</h2>
         <p>
-		Calculating the return of a portfolio can be simple, when there are no flows.
-		
+		Calculating the return of a portfolio can be rather easy, as long as there are no cash flows involved.
+		In this case, we only need the following input: initial value of the investment $V_0$, current value of the investment $V_t$ and a year fraction $\tau$.
+		The year fraction $\tau$ will express how much time (in years) has passed between initial valuation at time $0$ and the current valuation at time $t$.
+		The return $r$ is then,
+		$$ r = \frac{1}{\tau}\left(\frac{V_t}{V_o} - 1\right). $$
 		</p>
         
         <!-- <h2>Project Screenshots:</h2> -->
         <!-- <img src="screenshot-weatherapp.png" alt="Weather App Screenshot" width="600"> -->
         
+		<h2>Extra: day count conventions </h2>
+        <p>
 		
-		<p><a href="../index.html">Back to main page </a></p>
+		</p>
+        
+		
+		
+		<p><a href="../index.html"> Back to main page </a></p>
     </article>
 
 </body>
