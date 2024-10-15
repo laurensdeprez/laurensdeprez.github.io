@@ -72,7 +72,7 @@ nav ul li a:hover {
     background-color: #fff;
     max-width: 1200px; /* Set a maximum width */
     width: 90%; /* Ensure the sections are responsive */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Optional shadow for emphasis */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
 }
 #contact {
     margin-bottom: 2rem; /* Adds space above the footer */
@@ -117,7 +117,8 @@ nav ul li a:hover {
 .project-detail {
     padding: 2rem;
     background-color: #fff;
-    max-width: 800px;
+    max-width: 1200px; /* Set a maximum width */
+    width: 90%; /* Ensure the sections are responsive */
     margin: 2rem auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     text-align: left;
