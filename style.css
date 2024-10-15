@@ -66,11 +66,13 @@ nav ul li a:hover {
 }
 
 /* Main section styles */
-#projects #about #contact {
-	margin: 2rem;
+#projects, #about, #contact {
+    margin: 2rem auto;
     padding: 2rem;
     background-color: #fff;
-    text-align: center;
+    max-width: 1200px; /* Set a maximum width */
+    width: 90%; /* Ensure the sections are responsive */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05); /* Optional shadow for emphasis */
 }
 #contact {
     margin-bottom: 2rem; /* Adds space above the footer */
