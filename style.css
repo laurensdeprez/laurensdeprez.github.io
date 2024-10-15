@@ -1,6 +1,6 @@
 /* General styles */
 * {
-    margin: 0;
+    margin: 2rem; 
     padding: 0;
     box-sizing: border-box;
 }
@@ -99,16 +99,6 @@ nav ul li a {
     color: white;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-
-.project-summary a:hover {
-    background-color: #555;
-}
-
-/* Hover effect for project items */
-.project-summary:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Individual project detail page */
