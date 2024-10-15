@@ -37,7 +37,7 @@ h1 {
 }
 
 /* Main section styles */
-#projects {
+#projects #about #contact {
     padding: 2rem;
     background-color: #fff;
     text-align: center;
