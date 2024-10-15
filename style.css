@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
@@ -41,8 +41,11 @@ h1 {
     padding: 2rem;
     background-color: #fff;
     text-align: center;
+	flex-grow: 1; 
 }
-
+#contact {
+    margin-bottom: 2rem; /* Adds space above the footer */
+}
 /* Project summary list on main page */
 .project-list {
     margin-top: 2rem;
