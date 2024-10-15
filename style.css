@@ -1,6 +1,6 @@
 /* General styles */
 * {
-    margin: 2rem; 
+    margin: 0; 
     padding: 0;
     box-sizing: border-box;
 }
@@ -18,6 +18,7 @@ body {
 a {
     color: #333;
     text-decoration: none;
+	font-style: italic;
 }
 
 a:hover {
@@ -62,6 +63,8 @@ nav ul li a {
     background-color: #fff;
     text-align: center;
 	flex-grow: 1; 
+	margin-left: 1rem;
+	margin-right: 1rem;
 }
 #contact {
     margin-bottom: 2rem; /* Adds space above the footer */
