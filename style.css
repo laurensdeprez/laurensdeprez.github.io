@@ -65,10 +65,10 @@ nav ul li a:hover {
 
 /* Main section styles */
 #projects #about #contact {
+	margin: 2rem;
     padding: 2rem;
     background-color: #fff;
     text-align: center;
-	margin: 2rem;
 }
 #contact {
     margin-bottom: 2rem; /* Adds space above the footer */
