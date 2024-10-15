@@ -68,12 +68,12 @@ nav ul li a:hover {
     padding: 2rem;
     background-color: #fff;
     text-align: center;
-	flex-grow: 1; 
 	margin: 2rem;
 }
 #contact {
     margin-bottom: 2rem; /* Adds space above the footer */
 }
+
 /* Project summary list on main page */
 .project-list {
     margin-top: 2rem;
