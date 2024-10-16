@@ -7,37 +7,86 @@
     <link rel="stylesheet" href="../style.css">
 	
 	<!-- Load MathJax -->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="../mathjax-config.js"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
 
     <header>
-        <h1> Calculating portfolio returns </h1>
+		<nav>
+            <h1>Laurens Deprez</h1>
+            <ul>
+                <li><a href="../index.html"> Home </a></li>
+            </ul>
+        </nav>
     </header>
 
     <article class="project-detail">
-		<h2>Introduction</h2>
+		<h1>Calculating portfolio returns</h1>
+		<b> Published on 15 OCT 2024 </b>
+		<h2>Returns without cash flows</h2>
         <p>
-		Calculating the return of a portfolio can be rather easy, as long as there are no cash flows involved.
-		In this case, we only need the following input: initial value of the investment $V_0$, current value of the investment $V_t$ and a year fraction $\tau$.
+		Calculating the return of a portfolio is rather easy, as long as there are no cash flows involved.
+		In this case, we only need the following input: initial value of the portfolio $V_0$, current value of the portfolio $V_t$ and a year fraction $\tau$.
 		The year fraction $\tau$ will express how much time (in years) has passed between initial valuation at time $0$ and the current valuation at time $t$.
 		The return $r$ is then,
 		$$ r = \frac{1}{\tau}\left(\frac{V_t}{V_o} - 1\right). $$
+		Alternatively, we can use continuous compounding interest $r_c$ which calculated as, 
+		$$ r_c = \frac{1}{\tau}\log\left(\frac{V_t}{V_o}\right). $$
+		In what follows, we will focus on $r$ not $r_c$.
+		We will consider different ways to determine $\tau$ in the section "Day count conventions" below.
 		</p>
         
+		<h2>Returns with cash flows</h2>
+		<p>
+		The previous approach does not work when including cash flows.
+		Increasing the amount of money that you invest or selling a part of the investment impacts the value $V_t$ and consequently the return $r$.
+		This change in portfolio value is, however, not related to the market conditions.
+		Therefore, it should not be reflected in the return $r$.
+		</p>
+		<p>
+		Calculating the return of the portfolio including the cash flows, either in or out, can be done using money-weighted rate of return (MWRR) $r_{mw}$.
+		The MWRR takes into account the timing and size of cash flows and is defined by following equation,
+		$$ V_t = V_0(1 + r_{mw}\tau) + \sum_i C_i(1+ r_{mw} \tau_i),$$
+		where $C_i$ are the cash flows (negative for withdrawals), $\tau_i$ is the year fraction between the cash flow date and valuation date $t$.
+		Solving the equation for $r_{mw}$ gives,
+		$$ r_{mw} = \frac{V_t - V_0 - \sum_i C_i}{ V_0\tau + \sum_i C_i \tau_i}.$$
+		</p>
+		<p>
+		As an example, we consider a portfolio with initial value $V_0 = 20\ 000$ on January 1st, 2021, a value of $V_t = 40\ 000$ on July 1st, 2024 and cash flows as in the Table below.
+		Ignoring the cash flows, this portfolio has a return of $r = 19\%$.
+		The investor did, however, invest money over time and did even withdraw once.
+		Using the equation for the money-weighted rate of return, we find $r_{mw} = 5.07\%$.
+		</p>
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQWrkwmAq3nITnhJfFJ0baYfHGmWEclvuRCr-R0berwX_4pHhIE7uvunHvWRFsdu6wOwRIW4AHvtfh6/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width="100%" height="280"></iframe>
+		
+		
         <!-- <h2>Project Screenshots:</h2> -->
         <!-- <img src="screenshot-weatherapp.png" alt="Weather App Screenshot" width="600"> -->
         
-		<h2>Extra: day count conventions </h2>
+		<h2>Day count conventions </h2>
         <p>
-		
+		To calculate the return, we need a year fraction $\tau$. 
+		It measures the amount of time that has passed in years. 
+		For our calculation above, we used the day count convention ACT/365. 
+		It implies that you count the actual (ACT) number of days between two days and divide by 365.
+		The slash symbol implies division.		
+		One can argue that this approach is incorrect, since not every year has 365 days. 
+		It is, however, a convention not a law. 
+		</p>
+		<p>
+		There are many other conventions to determine the year fraction: ACT/360, ACT/ACT, 30/360, etc.
+		We refer the interested reader to <a href="https://en.wikipedia.org/wiki/Day_count_convention"> Wikipedia </a> and the more advance reader to a <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2128257"> paper </a>  by M. Henrard
 		</p>
         
 		
 		
 		<p><a href="../index.html"> Back to main page </a></p>
     </article>
-
+	
+	<footer>
+        <p>&copy; 2024 Laurens Deprez. All rights reserved.</p>
+    </footer>
 </body>
 </html>
