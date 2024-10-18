@@ -70,7 +70,7 @@ nav ul li a:hover {
 }
 
 /* Main section styles */
-#projects, #about, #contact {
+#projects, #about, #contact, #ongoing {
     margin: 1rem auto;
     padding: 2rem;
     background-color: #fff;
