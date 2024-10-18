@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Belgian work bonus </title>
+    <link rel="stylesheet" href="../style.css">
+	
+	<!-- Load MathJax -->
+    <script src="../mathjax-config.js"></script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header>
+	   <nav>
+            <h1>Laurens Deprez</h1>
+            <ul>
+                <li><a href="../index.html"> Home </a></li>
+            </ul>
+        </nav>	 
+	</header>
+
+    <article class="project-detail">
+		<h1> Belgian work bonus </h1>
+		<b> Published on </b>								
+								   
+		<h2> Introduction</h2>
+        <p>
+		Belgium has a particularly high income tax levels, when comparing to its neighbouring countries.
+		For example, the highest income tax bracket of 50% starts at 48 320	EUR in comparison to 45% from 277 826 EUR in Germany and 45% from 177 106 EUR in France.
+		The main contributions paid on the gross salary are the social contribution and the income tax.
+		First, the social contribution is deducted from the gross salary.
+		Then, the income tax level is determined using progressive tax brackets. 
+		</p>
+        <p>
+		To make working more attractive, in particular for lower incomes, the government wanted a tax reduction for gross salaries below a set limit. 
+		Instead of lowering the income tax, a reduction of the social contribution for these salararies was concieved. 
+		The reduction only impacts people that get a salary excluding some exceptions that we will not consider. 
+		This also explains its name, 'work bonus', it is a bonus for people that work.
+		</p>
+		
+		<h2> Tax calculation </h2>
+		<p>
+		To get to the net salary from the gross salary, it takes the two steps.
+		First, the social contribution is deducted.
+		This is a flat rate, meaning independent of salary, of 13.07%. 
+		This leads to the taxable income which is the input for the income tax calculation. 
+		Second, the income tax is deducted. 
+		This is more involved since it involves tax brackets.
+		The tranch of the taxable salary that falls in between the lower and the upper bound of the tax bracket is taxed at the rate of the bracket.
+		For instance, the bracket of 40% ranges from 15 820 EUR to 27 920 EUR.
+		The tranch of the taxable income that is higher than 15 820 EUR and lower than  27 920 EUR is taxed at 40%.
+		A taxable income of 20 000 EUR pays 40% of (20 000 - 15 820) or 1 672  EUR in this bracket. 
+		In the table below, we consider annual incomes of 30 000 EUR, 45 000 EUR and 60 000 EUR. 
+		We also include the tax rate, i.e. the income tax divided by the gross income, and the total tax rate, i.e. the social contribution plus the income tax divided by the gross income.
+		The 'calculation' tab of the table includes a detailed calculation of the income tax per bracket. 
+		</p>
+		
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTo1uRl-nuFfDccN-GPE1_iTAlddUyyiO8nw4eooXjuE8K97vyn9NtScEF8Qg6tQHN3npJauE4STeCE/pubhtml?widget=true&amp;headers=false" width="100%" height="185"></iframe>
+		
+		<p>
+		This example is not complete and makes abstraction of at least the following: tax deductions for dependent persons, the special social contribution and the benefit in kind.  
+		</p>
+		
+		<h2> Work bonus </h2>
+		<p>
+		The work bonus issues a reduction of the social contributions for gross wages lower than 3 207.40 EUR per month.
+		We will assume that the factor between yearly and monthly income is 13.92 since it is common to receive a holiday bonus (92% of the monthly wage) and an end of year bonus (100% of the monthly wage).
+		The monthly reduction $R$ is calculated as follows,
+		<ul>
+			<li> $ R = 262,16 $ if $S \leq 2 013,64 $</li>
+			<li> $R = 262,16 - (0,2579 (S - 2.013,64)) $ if $ 2 013,64 \leq S \leq   2571,45$</li>
+			<li>Item 3</li>
+		</ul>
+
+		
+		</p>
+        
+		<h2> Does it help </h2>
+        <p>
+		SAY SOMETHING ABOUT EQUALITY, GINI or something!
+		</p>
+		
+        <h2> Effects on wage increase </h2>
+        <p>
+		SAY SOMETHING ABOUT 
+		</p>
+		
+		<h2> Abolishment or not </h2>
+        <p>
+		
+		Refer to news about its abolishment!
+		</p>
+		
+		
+		
+		<h2> References and notes </h2>
+		<p id="footnote-1">[1] Indeed, Belgium is a very complicated in terms of its government levels.</p>
+		<p><a href="../index.html"> Back to main page </a></p>
+    </article>
+	
+	<footer>
+        <p>&copy; 2024 Laurens Deprez. All rights reserved.</p>
+    </footer>
+</body>
+</html>
