@@ -31,6 +31,10 @@ b {
 	font-size: smaller;
 }
 
+ul, ol {
+    padding-left: 20px; /* Adjust the padding to move the list right */
+  }
+
 /* Header styles */
 header {
     background-color: #333;
