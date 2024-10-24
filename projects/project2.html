@@ -24,11 +24,11 @@
 
     <article class="project-detail">
 		<h1> Belgian work bonus </h1>
-		<b> Published on </b>								
+		<b> Published on 20 OCT 2024</b>								
 								   
 		<h2> Introduction</h2>
         <p>
-		Belgium has a particularly high income tax levels, when comparing to its neighbouring countries.
+		Belgium has particularly high income tax levels, when comparing to its neighbouring countries.
 		For example, the highest income tax bracket of 50% starts at 48 320	EUR in comparison to 45% from 277 826 EUR in Germany and 45% from 177 106 EUR in France.
 		The main contributions paid on the gross salary are the social contribution and the income tax.
 		First, the social contribution is deducted from the gross salary.
@@ -36,12 +36,12 @@
 		</p>
         <p>
 		To make working more attractive, in particular for lower incomes, the government wanted a tax reduction for gross salaries below a set limit. 
-		Instead of lowering the income tax, a reduction of the social contribution for these salararies was concieved. 
+		Instead of lowering the income tax, a reduction of the social contribution for lower salararies was concieved. 
 		The reduction only impacts people that get a salary excluding some exceptions that we will not consider. 
 		This also explains its name, 'work bonus', it is a bonus for people that work.
 		</p>
 		
-		<h2> Tax calculation </h2>
+		<h2> Tax on salary </h2>
 		<p>
 		To get to the net salary from the gross salary, it takes the two steps.
 		First, the social contribution is deducted.
@@ -53,7 +53,7 @@
 		For instance, the bracket of 40% ranges from 15 820 EUR to 27 920 EUR.
 		The tranch of the taxable income that is higher than 15 820 EUR and lower than  27 920 EUR is taxed at 40%.
 		A taxable income of 20 000 EUR pays 40% of (20 000 - 15 820) or 1 672  EUR in this bracket. 
-		In the table below, we consider annual incomes of 30 000 EUR, 45 000 EUR and 60 000 EUR. 
+		In the table below, we consider annual incomes of 25 000 EUR, 30 000 EUR, 40 000 EUR, 45 000 EUR and 60 000 EUR. 
 		We also include the tax rate, i.e. the income tax divided by the gross income, and the total tax rate, i.e. the social contribution plus the income tax divided by the gross income.
 		The 'calculation' tab of the table includes a detailed calculation of the income tax per bracket. 
 		</p>
@@ -61,43 +61,152 @@
 		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTo1uRl-nuFfDccN-GPE1_iTAlddUyyiO8nw4eooXjuE8K97vyn9NtScEF8Qg6tQHN3npJauE4STeCE/pubhtml?widget=true&amp;headers=false" width="100%" height="185"></iframe>
 		
 		<p>
-		This example is not complete and makes abstraction of at least the following: tax deductions for dependent persons, the special social contribution and the benefit in kind.  
+		This example makes abstraction of at least the following: tax deductions for dependent persons, the special social contribution and the benefit in kind.  
 		</p>
 		
 		<h2> Work bonus </h2>
 		<p>
-		The work bonus issues a reduction of the social contributions for gross wages lower than 3 207.40 EUR per month.
+		The work bonus is a reduction on the social contributions.
 		We will assume that the factor between yearly and monthly income is 13.92 since it is common to receive a holiday bonus (92% of the monthly wage) and an end of year bonus (100% of the monthly wage).
-		The monthly reduction $R$ is calculated as follows,
+		In July 2023, the monthly reduction $R$ for a monthly gross salary $S$ is calculated as follows,
 		<ul>
-			<li> $ R = 262,16 $ if $S \leq 2 013,64 $</li>
-			<li> $R = 262,16 - (0,2579 (S - 2.013,64)) $ if $ 2 013,64 \leq S \leq   2571,45$</li>
-			<li>Item 3</li>
+			<li> $R = \max(262.16, 13.07\%\cdot S)$ if $S \leq 2 013.64$</li>
+			<li> $R = 262.16 - 0.2579 (S - 2013.64)$ if $2 013.64 < S \leq 2 571,45$</li>
+			<li> $R = 247.31 - 0.2313 (S - 2013.64)$ if $2 571.45 < S \leq  3 082.66$ </li>
+			<li> $R = 0$ if $3 082.66 < S$. </li>
 		</ul>
-
+		The maximum in the first line makes sure that the work bonus is never higher than the social contributions that are due. 
+		The work bonus is substracted from the social contributions. 
+		</p>
+		<p>
+		We reconsider our example. 
+		The two highest salaries are not impacted by the bonus, which is as intended. 
+		The three lowest wages do get a bonus and therefore a higher net salary. 
+		Since the bonus acts on the social contribution, the taxable income is higher and therefore the income tax will be higher.
+		Consequently, there is a slight cancellation effect but it is still net positive. 
+		For instance, the work bonus for the yearly income of 25 000 EUR is 3 267.50 EUR but the net increase is less than 2 000 EUR. 
+		This is also clear in terms of tax rates. 
+		The tax rate is higher but the total tax rate is lower. 
 		
 		</p>
-        
-		<h2> Does it help </h2>
+		
+		<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbxlqNlC1tlccw00yxSBP7uY-TJ9H1Rq7p1kw78CK7Sht-Y97ZZ_wIgBoM8eU95qVlqlBB9r4MTlcO/pubhtml?widget=true&amp;headers=false" width="100%" height="185"></iframe>
+		
+		<h2> Does it work? </h2>
+		<h4> Static effect </h4>
         <p>
-		SAY SOMETHING ABOUT EQUALITY, GINI or something!
+		We state some static effects of the work bonus and its goals. 
+		Firstly, the goal of the work bonus is to increase the net salary of the lower salaries without increasing the gross salary. 
+		It is clear from our example that this goal is attained.
+		Secondly, the bonus is also only applied to people that have jobs. 
+		This implies that under the assumption that your gross unemployment benefits are the same as your gross salary, then your net income should be higher when working. 
+		Thirdly, lower taxes decrease the income of the state. 
+		The effect of the tax decrease is, however, kept under controle since the high earners are excluded from the work bonus.
+		Finally, the work bonus also makes the total tax more progressive since the difference in total tax rate between lower and higher earners has become larger. 
+		This should improve equality measures, e.g. the Gini coefficient. 
+		The effect is very clear on the figure below. 
+		In general, we can conclude that the static effects are positive. 
 		</p>
 		
-        <h2> Effects on wage increase </h2>
+		<iframe width="852" height="437" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbxlqNlC1tlccw00yxSBP7uY-TJ9H1Rq7p1kw78CK7Sht-Y97ZZ_wIgBoM8eU95qVlqlBB9r4MTlcO/pubchart?oid=2072232726&amp;format=interactive"></iframe>
+		
+		<h4> Effects on wage increases </h4>
         <p>
-		SAY SOMETHING ABOUT 
+		The problem  arrises when the salary of the beneficiaries of the work bonus increases because of a promotion or the automatic indexation of wages.
+		The current implementation of the bonus can lead to very high marginal tax rates for this group.
+		This is already slightly apparent when observing the rapid rise of the total tax rate as a function of gross salary in the second table. 
+		
+		Before the introduction of the work bonus, there was a clear cap on the marginal total tax rate. 
+		The marginal total tax rate is the total tax rate on the last euro earned, which is also the tax on your wage increase.
+		It could never exceed about 57%, i.e. first substracting 13.07% in social contribution and then substracting 50% by means of the highest income tax bracket.
+		This guarantees that at least about 43% of a wage increase lands in the pocket of the employee and even more for the lower earners. 		
+		</p>
+		<p>
+		To measure the effect of the work bonus, we consider a yearly wage increase of 1 250 EUR and determine the marginal total tax rate, i.e. the tax rate on the increase, as a function of the gross salary.
+		The figure below visualizes this. 
+		It is clear that the marginal tax rate for lower incomes is extremely high and maxing out at over 65%. 
+		It is even higher than the previous and current limit for high earners of 57%. 
 		</p>
 		
-		<h2> Abolishment or not </h2>
+		<iframe width="852" height="437" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbxlqNlC1tlccw00yxSBP7uY-TJ9H1Rq7p1kw78CK7Sht-Y97ZZ_wIgBoM8eU95qVlqlBB9r4MTlcO/pubchart?oid=1610260711&amp;format=image"></iframe>
+		
+		<p>
+		On the one hand, one can argue that the high marginal tax rate is not a big problem, since the net salaries of the beneficiaries did go up. 
+		On the other hand, taxing salary increases at these high rates has many disadvantages. 
+		
+		First, the automatic indexation of the salary is almost completely absorbed by taxes.
+		This causes a decrease in purchase power.
+		It should also be remarked that the beneficiaries of the work bonus represent about the four lowest income deciles. 
+		So, these are people that would benefit the most from automatic indexation but they no longer do. 
+		
+		Second, it makes it harder for employers to give reasonable promotions that make a net difference and are not excessively costly.
+		This is also mentioned in the media as the promotion drop-off. 
+		It should be noted that companies also pay taxes on top of the gross income.
+		In other words, the gross income does not represent the full cost of a salary. 
+		This implies that the state income on a salary increase is even higher than 65%. 
+		</p>
+				
+		<h4> Possible improvements </h4>
+		<p>
+		We consider a couple of improvements. 
+		Firstly to guarantee purchase power, wages follow the inflation with an automatic indexation in Belgium.
+		Since the current work bonus eats away at salary increases, increasing the wage limits (in formula for bonus $R$) would cancel this effect.		
+		The formula for the work bonus $R$ has been updated several times to facilitate this.
+		It seems, however, not automated in the same way as the wage indexations.
+		</p>
+		<p>
+		Secondly, a limit can be imposed on the marginal total tax rate.
+		We consider a first alternative with a limit of similar to the one of high earners, i.e. about 57%.
+		This would result in following reduction $R$ for a monthly gross salary $S$,
+		<ul>
+			<li> $R = \max(262.16, 13.07\%\cdot S)$ if $S \leq 2 013.64$</li>
+			<li> $R = 262.16 - 0.10 (S - 2013.64)$ if $2 013.64 < S \leq 4 635.24$</li>
+			<li> $R = 0$ if $4 635.24 < S$. </li>
+		</ul>
+		The problem with this approach is that we had to increase the maximum wage for a beneficiary to 4 635.24 EUR from 3 082.66 EUR per month.
+		This alternative would be more expensive for the state. 
+		</p>
+		<p>
+		We consider a second alternative with the same limit on the marginal total tax rate.
+		At the same time, we try to limit the impact on the state's treasury. 
+		This is achieved by the following reduction $R$ for a monthly gross salary $S$,
+		<ul>
+			<li> $R = 148.64  $ if $S \leq 2 013.64$</li>
+			<li> $R = 148.64 - 0.10 (S - 2013.64)$ if $2 013.64 < S \leq 3500 $</li>
+			<li> $R = 0$ if $3500 < S$. </li>
+		</ul>
+		The second alternative has the downside that the reduction on the social contribution is smaller. 
+		We compare the marginal tax rates of the alternatives with the original on the figure below. 
+		</p>
+		<iframe width="852" height="437" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbxlqNlC1tlccw00yxSBP7uY-TJ9H1Rq7p1kw78CK7Sht-Y97ZZ_wIgBoM8eU95qVlqlBB9r4MTlcO/pubchart?oid=483908243&amp;format=image"></iframe>
+		<p>
+		We observe that we managed to limit the marginal tax rate. 
+		For completeness, we also compare the total tax rate for all the regimes that we discussed. 
+		</p>
+		<iframe width="852" height="437" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTbxlqNlC1tlccw00yxSBP7uY-TJ9H1Rq7p1kw78CK7Sht-Y97ZZ_wIgBoM8eU95qVlqlBB9r4MTlcO/pubchart?oid=2122000418&amp;format=image"></iframe>
+		<p>
+		
+		</p>
+		<h2> Future </h2>
         <p>
+		We did our analysis for the state of the work bonus in July 2023.
+		The current formula is slightly different. 
+		Our conclusions are not impacted by this new formula. 
+		</p>
 		
-		Refer to news about its abolishment!
+		<p>
+		The future of the work bonus is uncertain and might be abolished. 
+		This is mentioned by several media outlets that report on the formation of the new government, post the 2024 elections.  
+		It might be replaced by a more general tax reduction. 
 		</p>
 		
 		
 		
-		<h2> References and notes </h2>
-		<p id="footnote-1">[1] Indeed, Belgium is a very complicated in terms of its government levels.</p>
+		<h2> References </h2>
+		<p> https://www.socialsecurity.be/employer/instructions/dmfa/nl/latest/instructions/deductions/workers_reductions/workbonus.html </p>
+		<p> https://statbel.fgov.be/nl/themas/werk-opleiding/lonen-en-arbeidskosten/gemiddelde-bruto-maandlonen </p>
+		<p>https://www.vrt.be/vrtnws/nl/2024/01/23/promotieval-opslag-weinig-over-houden/ </p>
+		<p>https://www.standaard.be/cnt/dmf20240924_94052949</p>
 		<p><a href="../index.html"> Back to main page </a></p>
     </article>
 	
