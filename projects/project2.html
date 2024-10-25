@@ -70,12 +70,12 @@
 		We will assume that the factor between yearly and monthly income is 13.92 since it is common to receive a holiday bonus (92% of the monthly wage) and an end of year bonus (100% of the monthly wage).
 		In July 2023, the monthly reduction $R$ for a monthly gross salary $S$ is calculated as follows,
 		<ul>
-			<li> $R = \max(262.16, 13.07\%\cdot S)$ if $S \leq 2 013.64$</li>
+			<li> $R = \min(262.16, 13.07\%\cdot S)$ if $S \leq 2 013.64$</li>
 			<li> $R = 262.16 - 0.2579 (S - 2013.64)$ if $2 013.64 < S \leq 2 571,45$</li>
 			<li> $R = 247.31 - 0.2313 (S - 2013.64)$ if $2 571.45 < S \leq  3 082.66$ </li>
 			<li> $R = 0$ if $3 082.66 < S$. </li>
 		</ul>
-		The maximum in the first line makes sure that the work bonus is never higher than the social contributions that are due. 
+		The minimum in the first line makes sure that the work bonus is never higher than the social contributions that are due. 
 		The work bonus is substracted from the social contributions. 
 		</p>
 		<p>
@@ -159,7 +159,7 @@
 		We consider a first alternative with a limit of similar to the one of high earners, i.e. about 57%.
 		This would result in following reduction $R$ for a monthly gross salary $S$,
 		<ul>
-			<li> $R = \max(262.16, 13.07\%\cdot S)$ if $S \leq 2 013.64$</li>
+			<li> $R = \min(262.16, 13.07\%\cdot S)$ if $S \leq 2 013.64$</li>
 			<li> $R = 262.16 - 0.10 (S - 2013.64)$ if $2 013.64 < S \leq 4 635.24$</li>
 			<li> $R = 0$ if $4 635.24 < S$. </li>
 		</ul>
@@ -171,7 +171,7 @@
 		At the same time, we try to limit the impact on the state's treasury. 
 		This is achieved by the following reduction $R$ for a monthly gross salary $S$,
 		<ul>
-			<li> $R = 148.64  $ if $S \leq 2 013.64$</li>
+			<li> $R = \min(148.64, 13.07\%\cdot S)  $ if $S \leq 2 013.64$</li>
 			<li> $R = 148.64 - 0.10 (S - 2013.64)$ if $2 013.64 < S \leq 3500 $</li>
 			<li> $R = 0$ if $3500 < S$. </li>
 		</ul>
